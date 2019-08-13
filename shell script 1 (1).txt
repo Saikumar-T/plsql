@@ -1,0 +1,500 @@
+
+                   to find odd and even number
+#!/bin/bash
+        counter=1
+        while [ $counter -le 10 ]
+        do
+         if [ $(($counter % 2)) == 0 ]
+         then
+         echo $counter
+
+ 
+
+         fi
+        counter=`expr $counter + 1`
+        done
+
+
+
+
+**************************************************************************
+                         string palindrome
+
+echo enter a string
+read a
+b=`expr $a | wc -c`
+b=`expr $b - 1`
+echo number of letter=$b
+while test $b -gt 0
+do
+e=`expr $a | cut -c $b`
+#e=echo $a | cut -c $b
+d=$d$e
+b=`expr $b - 1`
+echo "$d"
+done
+echo the reversed string is :$d
+if test $a = $d
+then
+echo it is a palindrome
+else
+echo it is not a palindrome
+fi
+ ********************************************************************************                        
+                        sum of 4 numbers
+#!/bin/sh
+
+echo "Enter Size(N)"
+read N
+
+i=1
+sum=0
+
+echo "Enter Numbers"
+while [ $i -le $N ]
+do
+  read num           #get number
+  sum=$((sum + num)) #sum+=num
+  i=$((i + 1))
+done
+
+echo $sum
+
+
+
+
+***************************************************************************
+                    prime number
+
+#!/bin/sh
+#storing the number to be checked
+echo "number"
+read number
+i=2
+
+#flag variable
+f=0
+
+#running a loop from 2 to number/2
+while test $i -le `expr $number / 2`
+do
+
+#checking if i is factor of number
+if test `expr $number % $i` -eq 0
+then
+f=1
+fi
+
+#increament the loop variable
+i=`expr $i + 1`
+done
+if test $f -eq 1
+then
+echo "Not Prime"
+else
+echo "Prime"
+fi
+ 
+
+***********************************************************************************
+                     fibonacci
+Program for Fibonacci 
+# Series 
+   
+# Static input fo N 
+N=6 
+  
+# First Number of the 
+# Fibonacci Series 
+a=0 
+  
+# Second Number of the 
+# Fibonacci Series 
+b=1  
+   
+echo "The Fibonacci series is : "
+   
+for (( i=0; i<N; i++ )) 
+do
+    echo -n "$a "
+    fn=$((a + b)) 
+    a=$b 
+    b=$fn 
+done
+# End of for loop 
+
+***************************************************************************************
+                         simple interest
+
+#!/bin/sh
+
+echo "Enter Amount:"
+read p
+echo "Enter Time:"
+read t
+echo "Enter ROI:"
+read r
+
+i=` expr $p \* $t \* $r `
+i=` expr $i / 100 `
+
+echo "Simple Interest is: $i"
+*************************************************************************************
+                                  factorial
+read n
+fac=1
+while [ $n -gt 1 ]
+do
+fac=`expr $fac \* $n`
+n=`expr $n - 1`
+done
+echo "$fac"
+**********************************************************************************
+
+                             armstrong
+
+echo "enter number"
+read n
+temp=$n
+sum=0
+k=0
+while [ $n -ne 0 ]
+do
+k=`expr $n % 10`
+sum=`expr $sum + $k \* $k \* $k`
+n=`expr $n / 10`
+done
+if [ $temp -eq  $sum ]
+then
+echo "Armstrong number"
+else
+echo "Not an Armstrong number"
+fi
+**************************************************************************************
+
+                         reverse of 4 digit no given to script
+
+echo "enter number"
+read n
+rev=0
+k=0
+while [ $n -gt 0 ]
+do
+k=`expr $n % 10`
+rev=`expr $rev \* 10 + $k`
+n=`expr $n / 10`
+done
+echo "$rev"
+**************************************************************************************
+                                 no of vowels in given word
+
+echo "enter a string"
+read str
+v=$( echo $str | grep -o -i "[aeiou]" | wc -l)
+echo $v
+**********************************************************************************
+
+
+                                      compound intrest
+
+#!/bin/sh
+echo "enter the principle amount"
+read amt
+echo "enter the years"                             
+read yr
+echo "enter the rate"
+read rt
+#total=`echo $numone + $numtwo | bc`
+
+
+ci=`echo $rt \* 0.01 | bc`
+ci=`echo $ci + 1 | bc`
+ci=`echo $ci^$yr | bc`
+ci=`echo $ci -1 | bc`
+ci=`echo $ci \* $amt| bc`
+#ci=$((($amt * $(1+rt/100))**$yr))                         #compound_interest=principal*((1+rate/100)time-1)
+echo $ci
+*************************************************************************************************************************** 
+                           range of prime
+
+echo Enter a number till which you want to print the prime numbers
+ read num
+ c=2
+ while [ $c -le $num ]
+ do
+ flag=1
+ i=2
+ while [ $i -lt $c ]
+ do
+  a=`expr $c % $i`
+  if [ $a -eq 0 ]
+  then
+  flag=0
+  fi
+  i=`expr $i + 1`
+ done
+ if [ $flag -ne 0 ]
+ then
+  echo $c
+ fi
+ c=`expr $c + 1`
+ done
+************************************************************************
+                     length of string
+
+echo -n "Enter a string : "
+read string
+
+ 
+
+LEN=$(echo ${#string})
+echo $LEN
+if [ $LEN -lt 5 ]; then
+        echo "$string doesn't have at least 5 characters"
+else
+        echo "$string has 5 or more characters"
+fi
+
+******************************************************************************
+                               basic pattern
+
+rows=5
+for((i=1; i<=rows; i++))
+do
+  for((j=1; j<=i; j++))
+  do
+    echo -n $j
+  done
+  echo
+done
+******************************************************************************
+
+
+# Program in Bash to
+# print pyramid
+
+ 
+
+# Static input to the
+# number
+p=7;
+
+ 
+
+for((m=1; m<=p; m++))
+do
+        # This loop print spaces
+        # required
+        for((a=i; a<=p; a++))
+        do
+        echo -ne " ";
+        done
+
+ 
+
+        # This loop print the left
+        # side of the the pyramid
+        for((n=1; n<=m; n++))
+        do
+        echo -ne "#";
+        done
+
+ 
+
+        # This loop print right
+        # side of the pryamid.
+        for((i=1; i<m; i++))
+        do
+        echo -ne "#";
+        done
+
+ 
+
+        # New line
+        echo;
+done
+*******************************************************************************
+                         transpose of a matrix
+
+#Bash script to find transpose of a matrix
+
+matrix1=(1 2 3 4 5 6 7 8 9)
+
+rows=3
+
+cols=3
+
+echo "Matrix"
+
+for((i=0; i<rows; i++))
+
+do
+
+  for((j=0; j<cols; j++))
+
+  do
+
+    index=$((i*cols+j))
+
+    echo -n "${matrix1[index]} "
+
+  done
+
+  echo
+
+done
+
+ 
+
+for((i=0; i<rows; i++))
+
+do
+
+  for((j=i+1; j<cols; j++))
+
+  do
+
+    index1=$((rows*i + j))
+
+    index2=$((rows*j + i))
+
+    temp=${matrix1[index1]}
+
+    matrix1[index1]=${matrix1[index2]}
+
+    matrix1[index2]=$temp
+
+  done
+
+done
+
+ 
+
+echo "Transpose of a matrix"
+
+for((i=0; i<rows; i++))
+
+do
+
+  for((j=0; j<cols; j++))
+
+  do
+
+    index=$((i*cols+j))
+
+    echo -n "${matrix1[index]} "
+
+  done
+
+  echo
+
+done
+ ***************************************************************************
+
+
+
+                                 addition of matrix
+?
+    
+rows=3
+cols=3
+echo "First matrix"
+for((i=0; i<rows; i++))
+do
+  for((j=0; j<cols; j++))
+  do
+    index=$((i*cols+j))
+    echo -n "${matrix1[index]} "
+  done
+  echo
+done
+
+
+echo "Second matrix"
+for((i=0; i<rows; i++))
+do
+  for((j=0; j<cols; j++))
+  do
+    index=$((i*cols+j))
+    echo -n "${matrix2[index]} "
+  done
+  echo
+done
+
+
+k=0
+matrix3=()
+for((i=0; i<rows; i++))
+do
+  for((j=0; j<cols; j++))
+  do
+    index=$((i*cols+j))
+    matrix3[k]=$((${matrix1[index]} + ${matrix2[index]}))
+    k=$((k+1))
+  done
+done
+echo "Addition of two matrix"
+for((i=0; i<rows; i++))
+do
+  for((j=0; j<cols; j++))
+  do
+    index=$((i*cols+j))
+    echo -n "${matrix3[index]} "
+ 
+**********************************************************************************
+                                    gcd numbers
+
+
+#// Script for finding gcd of two number
+#// echo is for printing the message
+echo Enter two numbers with space in between
+
+ 
+
+# read for scanning
+read a b
+
+ 
+
+#// Assigning the value of a to m
+m=$a
+
+ 
+
+#// Condition checking if b greater than m
+#// If yes the replace the value of m assign a new value
+if [ $b -lt $m ]
+then
+m=$b
+fi
+
+ 
+
+#// In do while loop we are checking the gcd
+while [ $m -ne 0 ]
+do
+x=`expr $a % $m`
+y=`expr $b % $m`
+
+ 
+
+#// If x and y both are 0 then we complete over
+#// process and we print the gcd
+if [ $x -eq 0 -a $y -eq 0 ]
+then
+
+ 
+
+#// Printing the greatest gcd of two given number
+echo gcd of $a and $b is $m
+break
+fi
+m=`expr $m - 1`
+
+ 
+
+done
+********************************************************************************
+
+
+

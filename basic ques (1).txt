@@ -1,0 +1,221 @@
+--accept 4 num & sum of 4 no
+#!/bin/sh
+echo "enter 4 nos"
+read a
+read b
+read c
+read d
+sum=`expr $a + $b + $c + $d`
+echo "$sum"
+
+
+--accept 4 num & find avg
+echo "enter 4 nos"
+read a
+read b
+read c
+read d
+sum=`expr $a + $b + $c + $d`
+avg=`expr $sum / 4`
+echo "$avg"
+
+--si by P,R,T
+echo "enter principal"
+read p
+echo "enter time"
+read t
+echo "enter rate"
+read r
+sum=`expr $p \* $t \* $r`
+si=`expr $sum / 100`
+echo "$si"
+
+
+ci 
+
+--factorial
+read n
+fac=1
+while [ $n -gt 1 ]
+do
+fac=`expr $fac \* $n`
+n=`expr $n - 1`
+done
+echo "$fac"
+
+
+--prime
+echo "enter number"
+read n
+i=2
+f=0
+while test $i -le `expr $n / 2`
+do
+if test `expr $n % $i` -eq 0
+then
+f=1
+fi
+i=`expr $i + 1`
+done
+
+if test $f -eq 1
+then
+echo "Not Prime"
+else
+echo "Prime"
+fi
+
+
+--armstrong
+echo "enter number"
+read n
+temp=$n
+sum=0
+k=0
+while [ $n -ne 0 ]
+do
+k=`expr $n % 10`
+sum=`expr $sum + $k \* $k \* $k`
+n=`expr $n / 10`
+done
+if [ $temp -eq  $sum ]
+then
+echo "Armstrong number"
+else
+echo "Not an Armstrong number"
+fi
+
+
+--reverse of 4 digit no given to script
+echo "enter number"
+read n
+rev=0
+k=0
+while [ $n -gt 0 ]
+do
+k=`expr $n % 10`
+rev=`expr $rev \* 10 + $k`
+n=`expr $n / 10`
+done
+echo "$rev"
+
+--no of vowels in given word
+echo "enter a string"
+read str
+v=$( echo $str | grep -o -i "[aeiou]" | wc -l)
+echo $v
+
+pattern program 
+
+rows=4
+for((i=1; i<=rows; i++))
+do
+  for((j=1; j<=i; j++))
+  do
+    echo -n "* "
+  done
+  echo
+done
+
+*
+**
+***
+****
+*****
+
+compound interest
+
+#!/bin/sh
+echo "enter the principle amount"
+read amt
+echo "enter the years"
+read yr
+echo "enter the rate"
+read rt
+#total=`echo $numone + $numtwo | bc`
+
+
+ci=`echo $rt \* 0.01 | bc`
+ci=`echo $ci + 1 | bc`
+ci=`echo $ci^$yr | bc`
+ci=`echo $ci -1 | bc`
+ci=`echo $ci \* $amt| bc`
+#ci=$((($amt * $(1+rt/100))**$yr))
+echo $ci
+
+
+bubble sort
+# Sorting the array in Bash 
+# using Bubble sort 
+
+# Static input of Array 
+arr = (10 8 20 100 12) 
+
+echo "Array in original order"
+echo ${arr[*]} 
+
+# Performing Bubble sort 
+for ((i=0; i<5; i++)) 
+do
+	
+	for((j=i; j<5-i-1; j++)) 
+	do
+	
+		if ((${arr[j]} > ${arr[$((j+1))]})) 
+		then
+			# swap 
+			temp=${arr[$j]} 
+			arr[$j]=${arr[$((j+1))]} 
+			arr[$((j+1))]=$temp 
+		fi
+	done
+done
+
+echo "Array in sorted order :"
+echo ${arr[*]} 
+
+shell script to print half pyramid using numbers
+number=1
+rows=5
+for((i=1; i<=rows; i++))
+do
+  for((j=1; j<=i; j++))
+  do
+    echo -n "$number"
+    number=$((number + 1))
+  done
+  number=1
+  echo
+done
+ 1
+12
+123
+1234
+12345
+
+
+
+shell script inverted half pyramid
+rows=5
+for((i=rows; i>=1; i--))
+do
+  for((j=1; j<=i; j++))
+  do
+    echo -n "*"
+  done
+  echo
+done
+
+
+*****
+****
+***
+**
+*
+ 
+
+
+
+
+
+
