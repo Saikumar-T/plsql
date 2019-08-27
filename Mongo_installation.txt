@@ -1,0 +1,35 @@
+1.Click on below link
+
+https://www.mongodb.com/download-center/community?jmp=docs
+
+2. Select version(prefered 3.2) and OS and Download.
+
+3.After downloading double click on .msi file
+
+4.In installation Wizard 
+  Choose set up type as 'COMPLETE'
+
+5.Select Install MongoD as a Service MongoDB as a service.
+
+
+choose Run the service as Network Service user (Default)
+
+6.Finish installation.
+
+7. After installation 
+
+Create a folder Named 'data' in C drive and create folder named 'db' in data folder.( mongo db default data path  /data/db)
+
+ go to C:\Program Files\MongoDB\Server\4.2\bin\ directory and double-click on mongod.exe
+ 
+then double click on C:\Program Files\MongoDB\Server\4.2\bin\ directory and double-click on mongo.exe
+
+8. check mongo working, run below it will print 'Hello world'.
+
+var myMessage='Hello World';
+printjson(myMessage);
+
+
+
+
+
